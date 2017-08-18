@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <title>Home - Alquileres Magenta</title>
+        <meta charset="UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+         <!-- Modal -->
+        <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Registrate</h4>
+                    </div>
+                    <form class="form-horizontal">
+                        <div class="modal-body">
+                            <section class="row">
+                                <div class="col-lg-12">
+
+                                    <fieldset>
+                                        <legend>Información de la Cuenta</legend>
+                                        <div class="form-group">
+                                            <label for="user" class="col-lg-3 col-md-3 col-sm-3">Usuario <em>(*)</em></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="user" name="user" type="text" placeholder="Escriba su usuario"
+                                                       title="Escriba su nombre de usuario" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="pass1">Contraseña <em>(*)</em></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="pass1" name="pass1" type="password" placeholder="Escriba su contraseña"
+                                                       title="Escriba su contraseña" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="pass2">Confirme su contraseña <em>(*)</em></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="pass2" name="pass2" type="password" placeholder="Escriba su contraseña"
+                                                       title="Vuelva a escribir su contraseña" required>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Información Personal</legend>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="nombre">Nombre <em>(*)</em></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Escriba su nombre" 
+                                                       title="Escriba su nombre" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="apellido">Apellido <em>(*)</em></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="apellido" name="apellido" type="text" placeholder="Escriba su apellido" 
+                                                       title="Escriba su apellido" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 col-md-2 col-sm-2" for="masculino">Masculino</label>
+                                            <div class="col-lg-4">
+                                                <input id="masculino" type="radio" required name="sexo">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 col-md-2 col-sm-2" for="femenino">Femenino</label>
+                                            <div class="col-lg-4">
+                                                <input id="femenino" type="radio" required name="sexo">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="email">E-mail <em>(*)</em></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="email" name="email" type="email" placeholder="cuenta@correo.com" 
+                                                       title="Escriba su e-mail" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="tel">Teléfono</label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="tel" name="tel" type="tel" title="Escriba su teléfono o celular"
+                                                       placeholder="5555-5555">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Facturación</legend>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="direccion">Dirección</label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="direccion" name="direccion" type="text" placeholder="Escriba su dirección"
+                                                       title="Escriba su dirección">
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="tarjeta">Tarjeta</label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <select class="form-control" id="tarjeta" name="tarjeta">
+                                                    <option value="1">Visa</option>
+                                                    <option value="2">Mastercard</option>
+                                                    <option value="3">American Express</option>
+                                                    <option value="4">Diners</option>
+                                                </select>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="numTarjeta">Número de Tarjeta</label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="numTarjeta" name="numTarjeta" type="number"
+                                                       placeholder="XXXX-XXXX-XXXX-XXXX">
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 col-md-3 col-sm-3" for="verTarjeta">Código Verificador</label>
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <input class="form-control" id="verTarjeta" name="verTarjeta" type="number"
+                                                       placeholder="XXX" max="999" min="111">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-group">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <input id="newsletter" name="newsletter" type="checkbox">
+                                        </div>
+                                        <label class="col-lg-11 col-md-11 col-sm-11 col-xs-11" for="newsletter">Deseo recibir ofertas y promociones de Magenta.</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <input id="terminos" name="terminos" type="checkbox" required title="Acepte los términos y condiciones para continuar.">
+                                        </div>
+                                        <label class="col-lg-11 col-md-11 col-sm-11 col-xs-11" for="terminos">He leído y acepto los términos.</label>
+                                    </div>
+
+
+                                </div>
+                            </section>
+                        </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-default" id="submitRegistro" type="submit" value="Enviar">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="labelEntrar">Log In</h4>
+                    </div>
+                    <form class="form-horizontal">
+                        <div class="modal-body">
+                            <section class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="col-lg-3 col-sm-3 col-md-3"
+                                               for="usuario">Usuario</label>
+                                        <div class="col-lg-9 col-md-9 col-sm-9">
+                                            <input class="form-control" id="usuario"
+                                                   name="usuario" type="text" required
+                                                   placeholder="Escriba su usuario"
+                                                   title="Escriba su usuario">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 col-sm-3 col-md-3"
+                                               for="pass">Contraseña</label>
+                                        <div class="col-lg-9 col-md-9 col-sm-9">
+                                            <input class="form-control" id="pass" name="pass" 
+                                                   type="password" required
+                                                   title="Escriba su contraseña"
+                                                   placeholder="Escriba su contraseña">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <input type="submit" class="form-control" value="Entrar">
+                            </div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    data-toggle="modal" data-target="#registro">
+                                No tengo una cuenta.
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div id="modalVestidoQuince" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Vestido Galaxy</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <div class="col-lg-4 col-sm-6 col-xs-6">
+                            <img class="img-responsive" src="img/dress-739665_1280.jpg" alt="Vestido Galaxy"/>
+                        </div>
+                        <div class="col-lg-8 col-sm-6 col-xs-6">
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu</p>
+                            <p class="text-left">Size: XL - L - M - S</p>
+                            <p class="text-right" ><a href="detalleProducto.html">Más Info</a></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contenedor" class="container">
+            <div class="row">
+                <header class="col-lg-12">
+                    <button id="ingresar" type="button" class="col-lg-1 col-lg-offset-11 col-md-1 col-md-offset-11 
+                            col-sm-1 col-sm-offset-11 col-xs-1 col-xs-offset-11" 
+                            data-toggle="modal" data-target="#login">
+                        Entrar
+                    </button>
+                    <img class="img-responsive center-block"
+                         src="img/logoMagenta.jpg" alt="Magenta Alquileres" 
+                         title="Alquiler de vestidos Magenta.">
+                </header>
+            </div>
+            <div class="row">
+                <nav id="menuPrincipal" class="col-lg-12">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" 
+                               href="mercaderia.html" role="button">
+                                Vestidos <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu nav" id="dropdown">
+                                <li>
+                                    <a href="vestidosDeQuince.html">Vestidos de Quince</a>
+                                </li>
+                                <li>
+                                    <a href="vestidosDeFiesta.html">Vestidos de Fiestas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="historia.html">Historia</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 hidden-xs">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators --> 
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img id="fotoSlide1" src="img/imagenPortada1.jpg" class="img-responsive" alt="Foto de Portada 1"/>
+                                <div class="carousel-caption">
+                                    <h3>Slide 1</h3>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img id="fotoSlide2" src="img/imagenPortada2.jpg" class="img-responsive" alt="Foto de Portada 2"/>
+                                <div class="carousel-caption">
+                                    <h3>Slide 2</h3>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img id="fotoSlide3" src="img/imagenPortada3.jpg" class="img-responsive" alt="Foto de Portada 3"/>
+                                <div class="carousel-caption">
+                                    <h3>Slide 3</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <section id="primeraHome" class="row">
+                <div class="col-lg-12">
+                    <h1 id="tituloFotos" class="col-lg-12 text-center"><strong>New collection</strong></h1>
+                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+
+                </div>
+
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+                <div class="clearfix visible-sm"></div>
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo hidden-xs">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+                <div class="clearfix visible-md"></div>
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo hidden-xs">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+                <div class="clearfix visible-lg visible-sm"></div>
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo hidden-xs">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo hidden-xs">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+                <div class="clearfix visible-sm visible-md"></div>
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo hidden-xs hidden-sm hidden-md">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+                <article class="col-lg-3 col-sm-6 col-md-4 articulo hidden-xs hidden-sm hidden-md">
+                    <input type="image" src="img/dress-739665_1280.jpg" class="btn img-responsive imgArticulo" data-toggle="modal" data-target="#modalVestidoQuince" alt="Vestido Galaxy">
+                    <div>
+                        <h2>Vestido Galaxy</h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <span><strong>$ 1800</strong></span>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <input class="btn btn-primary btn-sm botonArt" type="button" value="Buy">
+                    </div>
+                </article>
+            </section>
+            <footer class="row">
+                <p class="col-lg-12 text-center">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </footer>
+        </div>
+    </body>
+</html>
